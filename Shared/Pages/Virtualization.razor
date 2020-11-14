@@ -9,11 +9,11 @@
 
 <div class="weather-container">
     <div class="weather-table">
-        <h4>Loaded all at once:</h4>
+        <h4>Todo de una sola vez:</h4>
 
         @if (forecasts == null)
         {
-            <p><em>Loading...</em></p>
+            <p><em>Cargando...</em></p>
         }
         else
         {
@@ -31,7 +31,7 @@
     </div>
 
     <div class="weather-table">
-        <h4>Loaded on-the-fly:</h4>
+        <h4>Sobre la marcha:</h4>
         <ForecastTable>
             <Virtualize ItemsProvider="LoadForecast" ItemSize="itemHeight">
                 <ItemContent>
@@ -45,9 +45,9 @@
                 <Placeholder>
                     <tr style="@ItemStyle">
                         <td>@(DateTime.Now.AddDays(context.Index).ToShortDateString())</td>
-                        <td>Loading...</td>
-                        <td>Loading...</td>
-                        <td>Loading...</td>
+                        <td>Cargando...</td>
+                        <td>Cargando...</td>
+                        <td>Cargando...</td>
                     </tr>
                 </Placeholder>
             </Virtualize>
@@ -55,7 +55,7 @@
     </div>
 
     <div class="weather-table">
-        <h4>Loaded on-the-fly and cached:</h4>
+        <h4>Sobre la marcha y cache:</h4>
 
         <ForecastTable>
             <Virtualize ItemsProvider="LoadAndCacheForecast" ItemSize="itemHeight">
@@ -70,9 +70,9 @@
                 <Placeholder>
                     <tr style="@ItemStyle">
                         <td>@(DateTime.Now.AddDays(context.Index).ToShortDateString())</td>
-                        <td>Loading...</td>
-                        <td>Loading...</td>
-                        <td>Loading...</td>
+                        <td>Cargando...</td>
+                        <td>Cargando...</td>
+                        <td>Cargando...</td>
                     </tr>
                 </Placeholder>
             </Virtualize>

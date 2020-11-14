@@ -4,7 +4,7 @@
 
 <h3>JavaScript isolation</h3>
 
-<button class="btn btn-primary" @onclick="Prompt">Prompt</button>
+<button class="btn btn-primary" @onclick="Prompt">Preguntar</button>
 
 <p>@message</p>
 
@@ -13,6 +13,6 @@
 
     async Task Prompt()
     {
-        message = await ExampleJsInterop.Prompt("What is your favorite color?");
+        message = await ExampleJsInterop.Prompt("¿Cual es tu color favorito?");
     }
 }

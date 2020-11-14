@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
+
 using BlazorNet5Samples.Shared;
 
 namespace BlazorNet5Samples.Server.Data
@@ -11,7 +12,7 @@ namespace BlazorNet5Samples.Server.Data
     {
         private static string[] Summaries = new[]
         {
-            "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
+           "Congelante", "Refrescante", "Frío", "Frío", "Suave", "Cálido", "Balsámico", "Caliente", "Sofocante", "Abrasador"
         };
 
         private readonly List<WeatherForecast> forecasts = new List<WeatherForecast>();

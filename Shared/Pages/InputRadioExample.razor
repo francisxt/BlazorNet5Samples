@@ -3,13 +3,13 @@
 
 <h1>InputRadio component</h1>
 
-<p>Please take a moment to tell us what you think about Blazor.</p>
+<p>Tómese un momento para decirnos lo que piensa sobre Blazor.</p>
 
 <EditForm Model="survey" OnValidSubmit="HandleSubmit">
     <DataAnnotationsValidator />
-    <p>Name: <InputText @bind-Value="survey.Name" /></p>
+    <p>Nombre: <InputText @bind-Value="survey.Name" autocomplete="off"/></p>
     <p>
-        Opinion about blazor:
+        Tu opinión sobre Blazor:
         <InputRadioGroup @bind-Value="survey.OpinionAboutBlazor">
             @foreach (var opinion in opinions)
             {
@@ -21,7 +21,7 @@
         </InputRadioGroup>
     </p>
     <ValidationSummary />
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="submit" class="btn btn-primary">Enviar</button>
 </EditForm>
 
 <p>@message</p>
@@ -31,23 +31,23 @@
     string message;
     (string id, string label)[] opinions = new[]
     {
-        ("terrible", "Terrible, I prefer vanilla JS."),
-        ("ok", "It's ok I guess..."),
-        ("awesome", "It's awesome!!!")
+        ("Terrible", "Terrible, prefiero JS Vainilla."),
+        ("ok", "Esta bien, supongo..."),
+        ("Asombroso", "Es lo mejor que hay!!!")
     };
 
     void HandleSubmit()
     {
-        message = $"Thanks {survey.Name} for trying out Blazor!";
+        message = $"Gracias {survey.Name} por probar Blazor!";
     }
 
     public class BlazorSurvey
     {
-        [Required(ErrorMessage = "Please enter a name.")]
+        [Required(ErrorMessage = "Ingrese su nombre.")]
         public string Name { get; set; }
 
-        [Required(ErrorMessage = "Tell us what you think!")]
-        [RegularExpression("awesome", ErrorMessage = "...are you sure?")]
+        [Required(ErrorMessage = "Dinos que opinas!")]
+        [RegularExpression("Asombroso", ErrorMessage = "...estas seguro?")]
         public string OpinionAboutBlazor { get; set; }
     }
 }
