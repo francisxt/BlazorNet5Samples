@@ -7,10 +7,13 @@
 
 <EditForm Model="survey" OnValidSubmit="HandleSubmit">
     <DataAnnotationsValidator />
+
     <p>Nombre: <InputText @bind-Value="survey.Name" autocomplete="off"/></p>
     <p>
         Tu opinión sobre Blazor:
+
         <InputRadioGroup @bind-Value="survey.OpinionAboutBlazor">
+
             @foreach (var opinion in opinions)
             {
                 <div class="form-check">
@@ -18,13 +21,16 @@
                     <label class="form-check-label" for="@opinion.id">@opinion.label</label>
                 </div>
             }
+
         </InputRadioGroup>
+
     </p>
     <ValidationSummary />
     <button type="submit" class="btn btn-primary">Enviar</button>
 </EditForm>
 
 <p>@message</p>
+
 
 @code {
     BlazorSurvey survey = new BlazorSurvey();
